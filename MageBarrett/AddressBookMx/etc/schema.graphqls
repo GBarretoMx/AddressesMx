@@ -1,0 +1,37 @@
+type Query {
+    addressesByZipMx (codigoPostal:Int):
+    AddressesByZipMx
+    @resolver(class:"MageBarrett\\AddressBookMx\\Model\\Resolver\\AddressesMx") @doc(description: "Return list addresses by zip")
+
+    addressesByStateMx (estado:String):
+    AddressesByState @resolver(class:"MageBarrett\\AddressBookMx\\Model\\Resolver\\AddressesByState") @doc(description: "Return list addresses by state")
+
+    addressesByTown (municipio:String):
+    AddressesByTown @resolver(class:"MageBarrett\\AddressBookMx\\Model\\Resolver\\AddressesByTown") @doc(description: "Return list addresses by twon")
+}
+
+type AddressesByZipMx {
+    addresses: [Addresses]
+}
+type AddressesByState {
+    addresses: [Addresses]
+}
+
+type AddressesByTown {
+    addresses: [Addresses]
+}
+
+
+type Addresses {
+    addressBookId: Int
+    codigoPostal: Int
+    nombreAsentantamiento: String
+    tipoAsentamiento: String
+    municipio: String
+    estado: String
+    claveEntidad: Int
+    claveMunicipio: Int
+    createdAt: String
+}
+
+

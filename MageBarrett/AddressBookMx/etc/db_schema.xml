@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="magebarrett_addressbookmx" resource="default" engine="innodb" comment="Address book Mx Table">
+        <column xsi:type="int" name="addressbook_id" unsigned="true" nullable="false" identity="true"
+                comment="Addres book ID"/>
+        <column xsi:type="int" name="codigo_postal" unsigned="true" nullable="true" identity="false"
+                comment="Codigo postal"/>
+        <column xsi:type="varchar" name="nombre_asentantamiento" nullable="false" length="255"
+                comment="Nombre del asentamiento"/>
+        <column xsi:type="varchar" name="tipo_asentamiento" nullable="false" length="255"
+                comment="Tipo de asentamiento"/>
+        <column xsi:type="varchar" name="municipio" nullable="false" length="255"
+                comment="Nombre del municipio"/>
+        <column xsi:type="varchar" name="estado" nullable="false" length="255"
+                comment="Nombre del estado"/>
+        <column xsi:type="int" name="clave_entidad" unsigned="true" nullable="true" identity="false"
+                comment="Clave entidad"/>
+        <column xsi:type="int" name="clave_municipio" unsigned="true" nullable="true" identity="false"
+                comment="Clave municipio"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="addressbook_id"/>
+        </constraint>
+    </table>
+</schema>
