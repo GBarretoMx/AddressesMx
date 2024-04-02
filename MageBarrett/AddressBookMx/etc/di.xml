@@ -8,6 +8,12 @@
                 type="MageBarrett\AddressBook\Model\AddressBook"/>
     <preference for="MageBarrett\AddressBook\Api\Data\AddressBookSearchResultsInterface"
                 type="Magento\Framework\Api\SearchResults"/>
+    <preference for="MageBarrett\AddressBookMx\Api\AddressesByZipInterface"
+                type="MageBarrett\AddressBookMx\Model\AddressesByZip" />
+    <preference for="MageBarrett\AddressBookMx\Api\AddressesByTownInterface"
+                type="MageBarrett\AddressBookMx\Model\AddressesByTown" />
+    <preference for="MageBarrett\AddressBookMx\Api\AddressesByStateInterface"
+                type="MageBarrett\AddressBookMx\Model\AddressesByState" />
 
     <type name="Magento\Framework\Console\CommandListInterface">
         <arguments>

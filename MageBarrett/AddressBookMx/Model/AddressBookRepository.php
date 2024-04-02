@@ -91,7 +91,7 @@ class AddressBookRepository implements AddressBookRepositoryInterface
     public function getById($addressbookId)
     {
         $addressBook = $this->addressBookFactory->create();
-        $addressBook->load($addressbookId);
+        $this->resource->load($addressBook, $addressbookId);
         if (!$addressBook->getId()){
             throw new NoSuchEntityException(__('The Address Book with the "%1" ID doesn\'t exist.', $addressBook));
         }
